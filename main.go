@@ -26,7 +26,7 @@ const index_html = `<!DOCTYPE html>
 
   <meta name="go-import" content="simplex.sh git git://github.com/fd/simplex">
 
-  <link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
   <style type="text/css" media="all">
 
   html, body {
