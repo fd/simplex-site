@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -15,6 +16,16 @@ func main() {
 }
 
 func index(res http.ResponseWriter, req *http.Request) {
+	if req.Header.Get("X-Forwarded-Proto") != "https" {
+		http.Redirect(res, req, "https://simplex.sh"+req.URL.Path, 301)
+		return
+	}
+
+	if strings.HasPrefix(req.Header.Get("Host"), "www.") {
+		http.Redirect(res, req, "https://simplex.sh"+req.URL.Path, 301)
+		return
+	}
+
 	fmt.Fprintln(res, index_html)
 }
 
