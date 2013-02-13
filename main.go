@@ -21,7 +21,7 @@ func index(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	if strings.HasPrefix(req.Header.Get("Host"), "www.") {
+	if strings.HasPrefix(req.Host, "www.") {
 		http.Redirect(res, req, "https://simplex.sh"+req.URL.Path, 301)
 		return
 	}
