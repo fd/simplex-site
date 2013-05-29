@@ -26,7 +26,8 @@ func index(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	fmt.Fprintln(res, index_html)
+	str := strings.Replace(index_html, "{{.Path}}", req.URL.Path, -1)
+	fmt.Fprintln(res, str)
 }
 
 const index_html = `<!DOCTYPE html>
@@ -57,6 +58,20 @@ const index_html = `<!DOCTYPE html>
     height: 0;
   }
 
+  .Content {
+    position: absolute;
+    width: 12000px;
+    left:  -6000px;
+    top:   -160px;
+
+
+    text-align:center;
+    white-space: pre;
+    font-family: 'Wire One', sans-serif;
+    font-size:   160px;
+  }
+
+
   .Simplex {
     position: absolute;
     width: 12000px;
@@ -67,7 +82,7 @@ const index_html = `<!DOCTYPE html>
     text-align:center;
     white-space: pre;
     font-family: 'Wire One', sans-serif;
-    font-size: 160px;
+    font-size:   160px;
   }
 
   </style>
@@ -75,7 +90,13 @@ const index_html = `<!DOCTYPE html>
 <body>
 
 <div class="Wrapper">
-<div class="Simplex">________________________________________________________________________________________________________________________________Simplex________________________________________________________________________________________________________________________________</div>
+  <div class="Content">
+    <div class="Simplex">
+      ________________________________________________________________________________________________________________________________Simplex________________________________________________________________________________________________________________________________
+    </div>
+
+    <a href="http://godoc.org/simplex.sh{{.Path}}"><var>import "simplex.sh{{.Path}}"</var></a>
+  </div>
 </div>
 
 </body>
