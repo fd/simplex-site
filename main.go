@@ -63,7 +63,7 @@ const index_html = `<!DOCTYPE html>
     width: 12000px;
     left:  -6000px;
     top:   -160px;
-    text-align:center;
+    text-align: center;
     white-space: pre;
     font-family: 'Wire One', sans-serif;
   }
@@ -79,9 +79,10 @@ const index_html = `<!DOCTYPE html>
 
 <div class="Wrapper">
   <div class="Content">
-    <div class="Simplex">
+    <span class="Simplex">
       ________________________________________________________________________________________________________________________________Simplex________________________________________________________________________________________________________________________________
-    </div>
+    </span>
+    <br/>
 
     <a href="http://godoc.org/simplex.sh{{.Path}}"><var>import "simplex.sh{{.Path}}"</var></a>
   </div>
