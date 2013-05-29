@@ -63,25 +63,13 @@ const index_html = `<!DOCTYPE html>
     width: 12000px;
     left:  -6000px;
     top:   -160px;
-
-
     text-align:center;
     white-space: pre;
     font-family: 'Wire One', sans-serif;
-    font-size:   160px;
   }
 
 
   .Simplex {
-    position: absolute;
-    width: 12000px;
-    left:  -6000px;
-    top:   -160px;
-
-
-    text-align:center;
-    white-space: pre;
-    font-family: 'Wire One', sans-serif;
     font-size:   160px;
   }
 
