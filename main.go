@@ -16,11 +16,6 @@ func main() {
 }
 
 func index(res http.ResponseWriter, req *http.Request) {
-	if req.Header.Get("X-Forwarded-Proto") != "https" {
-		http.Redirect(res, req, "http://simplex.sh"+req.URL.Path, 301)
-		return
-	}
-
 	if strings.HasPrefix(req.Host, "www.") {
 		http.Redirect(res, req, "http://simplex.sh"+req.URL.Path, 301)
 		return
